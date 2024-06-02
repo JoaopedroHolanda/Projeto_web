@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Inscrições - Gestão de Eventos</title>
+</head>
+<body>
+    <div id="div-navbar">
+        <div id="logo-container">
+           <a href="#index"><img id="logo" src="../img/Logo.jpeg"></a>
+        </div>
+        <ul class="navbar">
+            <li><a href="#eventos">Eventos</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#area-do-participante">Área do Participante</a></li>
+            <li><a href="#inscricoes">Inscrições</a></li>
+        </ul>
+    </div>
+
+    <div id="header">
+        <h1>Inscrições para Eventos</h1>
+        <p>Veja todos os participantes inscritos nos eventos!</p>
+    </div>
+    
+    <div id="inscricoes">
+        <div class="card-inscricao">
+            <h3>Evento 1</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>João Silva</td>
+                        <td>joao.silva@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>Maria Santos</td>
+                        <td>maria.santos@example.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card-inscricao">
+            <h3>Evento 2</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pedro Oliveira</td>
+                        <td>pedro.oliveira@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>Ana Lima</td>
+                        <td>ana.lima@example.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="rodape">
+        <div id="principal">
+             <p><a href="https://www.unifor.br/fale-conosco">Fale conosco</a> | <a href="https://www.unifor.br/trabalhe-conosco">Trabalhe conosco</a> | <a href="https://www.unifor.br/sempre-unifor/apresentacao">Sempre unifor</a> | <a href="https://www.unifor.br/certificados">Certificados de Eventos</a></p>
+             <p>Fundação Edson Queiroz - Universidade de Fortaleza</p>
+             <p>Central de Atendimento: (85) 3477.3000 | Endereço: Av. Washington Soares, 1321 - Edson Queiroz - CEP 60811-905 - Fortaleza-CE Brasil</p>
+        </div>
+ 
+        <div id="logo-unifor-rodape">
+         <img src="../img/unifor.png">
+        </div>
+     </div>
+</body>
+</html>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+#div-navbar {
+    background-color: #044CF4;
+    padding: 10px 0;
+}
+
+#logo{
+    width: 100px;
+    border-radius: 5px;
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.navbar a:hover {
+    background-color: #044CF4;
+}
+
+#header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+#header h1 {
+    margin-top: 0;
+    color: #044CF4;
+}
+
+#header p {
+    color: #666;
+}
+
+#inscricoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card-inscricao {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: 500px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card-inscricao h3 {
+    margin-top: 0;
+    color: #044CF4;
+}
+
+.card-inscricao table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.card-inscricao th, .card-inscricao td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+#rodape{
+    background-color: #044CF4;
+    height: 150px;
+    text-align: center;
+    padding-top: 20px;
+    color: #FFF;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+}
+
+#rodape #principal {
+   margin-left: 120px;
+}
+
+#rodape #principal a{
+    text-align: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+}
+
+#logo-unifor-rodape img{
+    text-align: end;
+    width: 200px;
+    margin-left: 50px;
+}
+</style>

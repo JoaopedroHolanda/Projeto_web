@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Gestão de Eventos</title>
+</head>
+<body>
+    <div id="div-navbar">
+        <div id="logo-container">
+           <a href="#index"><img id="logo" src="../img/Logo.jpeg"></a>
+        </div>
+        <ul class="navbar">
+            <li><a href="#eventos">Eventos</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#area-do-participante">Área do Participante</a></li>
+        </ul>
+    </div>
+   
+    <div id="header">
+        <h1>Bem-vindo ao Sistema de Gestão de Eventos</h1>
+        <p>Gerencie suas inscrições e participe dos melhores eventos!</p>
+        <button id="btn-inscricao">Inscreva-se Agora</button>
+    </div>
+    
+    <div id="busca-eventos">
+        <input type="text" id="input-busca" name="input-busca" placeholder="Buscar Eventos">
+    </div>
+    
+    <div id="eventos">
+        <div class="card-evento">
+            <h3>Evento 1</h3>
+            <p><strong>Descrição:</strong> Descrição do evento 1.</p>
+            <p><strong>Data:</strong> 25 de Maio, 2024</p>
+            <p><strong>Local:</strong> Auditório Principal / Virtual</p>
+            <p><strong>Programação:</strong> 
+                <ul>
+                    <li>10:00 - Abertura</li>
+                    <li>11:00 - Palestra 1</li>
+                    <li>14:00 - Workshop</li>
+                </ul>
+            </p>
+            <button class="btn-evento">Participar</button>
+        </div>
+
+        <div class="card-evento">
+            <h3>Evento 2</h3>
+            <p><strong>Descrição:</strong> Descrição do evento 2.</p>
+            <p><strong>Data:</strong> 26 de Maio, 2024</p>
+            <p><strong>Local:</strong> Sala de Conferências / Virtual</p>
+            <p><strong>Programação:</strong> 
+                <ul>
+                    <li>09:00 - Registro</li>
+                    <li>10:00 - Keynote</li>
+                    <li>13:00 - Sessões de Discussão</li>
+                </ul>
+            </p>
+            <button class="btn-evento">Participar</button>
+        </div>
+
+        <div class="card-add-event" id="add-event">
+            <p>+</p>
+            <p>Adicionar Evento</p>
+        </div>
+    </div>
+
+    <div id="modal">
+        <div id="modal-content">
+            <span class="close">&times;</span>
+            <h2>Criar Novo Evento</h2>
+            <form id="form-criar-evento">
+                <label for="titulo">Título:</label><br>
+                <input type="text" id="titulo" name="titulo" required><br>
+                <label for="descricao">Descrição:</label><br>
+                <textarea id="descricao" name="descricao" required></textarea><br>
+                <label for="data">Data:</label><br>
+                <input type="date" id="data" name="data" required><br>
+                <label for="local">Local:</label><br>
+                <input type="text" id="local" name="local" required><br>
+                <label for="programacao">Programação:</label><br>
+                <textarea id="programacao" name="programacao" required></textarea><br>
+                <button type="submit">Criar Evento</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="rodape">
+        <div id="principal">
+             <p><a href="https://www.unifor.br/fale-conosco">Fale conosco</a> | <a href="https://www.unifor.br/trabalhe-conosco">Trabalhe conosco</a> | <a href="https://www.unifor.br/sempre-unifor/apresentacao">Sempre unifor</a> | <a href="https://www.unifor.br/certificados">Certificados de Eventos</a></p>
+             <p>Fundação Edson Queiroz - Universidade de Fortaleza</p>
+             <p>Central de Atendimento: (85) 3477.3000 | Endereço: Av. Washington Soares, 1321 - Edson Queiroz - CEP 60811-905 - Fortaleza-CE Brasil</p>
+        </div>
+ 
+        <div id="logo-unifor-rodape">
+         <img src="../img/unifor.png">
+        </div>
+     </div>
+     
+    <script>
+        document.getElementById('input-busca').addEventListener('input', function() {
+            let filter = this.value.toLowerCase();
+            let events = document.querySelectorAll('.card-evento');
+            
+            events.forEach(event => {
+                let title = event.querySelector('h3').innerText.toLowerCase();
+                if (title.includes(filter)) {
+                    event.style.display = '';
+                } else {
+                    event.style.display = 'none';
+                }
+            });
+        });
+
+        let modal = document.getElementById("modal");
+        let btn = document.getElementById("add-event");
+        let span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        document.getElementById('form-criar-evento').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            let titulo = document.getElementById('titulo').value;
+            let descricao = document.getElementById('descricao').value;
+            let data = document.getElementById('data').value;
+            let local = document.getElementById('local').value;
+            let programacao = document.getElementById('programacao').value;
+            
+            let newEventCard = document.createElement('div');
+            newEventCard.className = 'card-evento';
+            newEventCard.innerHTML = `
+                <h3>${titulo}</h3>
+                <p><strong>Descrição:</strong> ${descricao}</p>
+                <p><strong>Data:</strong> ${data}</p>
+                <p><strong>Local:</strong> ${local}</p>
+                <p><strong>Programação:</strong>
+                    <ul>
+                        ${programacao.split('\n').map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                </p>
+                <button class="btn-evento">Participar</button>
+            `;
+
+            let addEventButton = document.getElementById('add-event');
+            document.getElementById('eventos').insertBefore(newEventCard, addEventButton);
+            modal.style.display = "none";
+            document.getElementById('form-criar-evento').reset();
+        });
+    </script>
+</body>
+</html>

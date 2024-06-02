@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <div id="div-navbar">
+        <div id="logo-container">
+            <a href="#index"><img id="logo" src="../img/Logo.jpeg"></a>
+        </div>
+        <ul class="navbar">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Cadastrar</a></li>
+            <li><a href="#">Entrar</a></li>
+        </ul>
+    </div>
+    <div class="page">
+        <form method="POST" class="formLogin">
+            <h1>Cadastro</h1>
+            <p>Digite os seus dados de acesso no campo abaixo.</p>
+            <label for="nome">Nome</label>
+            <input type="text" placeholder="Digite seu nome" autofocus="true" />
+            <label for="email">E-mail</label>
+            <input type="email" placeholder="Digite seu e-mail" autofocus="true" />
+            <label for="password">Senha</label>
+            <input type="password" placeholder="Digite sua senha" />
+            <label for="accountType">Tipo de Conta</label>
+            <select id="accountType" class="form-control" required>
+                <option value="">Selecione...</option>
+                <option value="cliente">Participante</option>
+                <option value="prestador">Organizador</option>
+            </select>
+           
+            <input type="submit" value="Acessar" class="btn" />
+        </form>
+    </div>
+    
+</body>
+</html>
