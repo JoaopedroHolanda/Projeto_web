@@ -81,6 +81,48 @@
          <img src="../img/unifor.png">
         </div>
      </div>
+
+     <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                window.location.href = '/login.html';
+                return;
+            }
+        
+            const response = await fetch('http://localhost:3000/inscricoes', {
+                headers: {
+                    'Authorization': token
+                }
+            });
+        
+            const inscricoes = await response.json();
+            const inscricoesContainer = document.getElementById('inscricoes');
+        
+            inscricoes.forEach(inscricao => {
+                const inscricaoDiv = document.createElement('div');
+                inscricaoDiv.className = 'card-inscricao';
+                inscricaoDiv.innerHTML = `
+                    <h3>${inscricao.evento}</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>${inscricao.nome}</td>
+                                <td>${inscricao.email}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                `;
+                inscricoesContainer.appendChild(inscricaoDiv);
+            });
+        });
+        </script>
 </body>
 </html>
 

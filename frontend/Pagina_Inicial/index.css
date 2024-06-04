@@ -70,15 +70,6 @@ body {
     color: #666;
 }
 
-#btn-inscricao {
-    background-color: #044CF4;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 5px;
-}
 
 #btn-inscricao:hover {
     background-color: #0206fc;
@@ -217,4 +208,27 @@ body {
     text-align: end;
     width: 200px;
     margin-left: 50px;
+}
+.btn-editar{
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+    background-color: #c2b612be;
+    color: white;
+}
+
+.btn-deletar{
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+    background-color: #e41b1b;
+    color: white;
 }
