@@ -41,7 +41,7 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center; /* Alinha verticalmente os links */
+    align-items: center; 
 }
 
 .navbar li {
@@ -139,4 +139,36 @@ body {
     transform: scale(1.05);
     background-color: blue;
 
+}
+
+#rodape{
+    background-color: #044CF4;
+    height: 150px;
+    text-align: center;
+    padding-top: 20px;
+    color: #FFF;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    
+    
+}
+
+#rodape #principal {
+   margin-left: 120px;
+    
+}
+#rodape #principal a{
+    text-align: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    
+}
+
+#logo-unifor-rodape img{
+    text-align: end;
+    width: 200px;
+    margin-left: 50px;
 }
