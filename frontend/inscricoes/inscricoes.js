@@ -62,7 +62,7 @@ function atualizarStatus(eventoId, usuarioId, status) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${localStorage.getItem('token')}`
+            'Authorization': localStorage.getItem('token') 
         },
         body: JSON.stringify({
             inscricoes: [
@@ -70,7 +70,12 @@ function atualizarStatus(eventoId, usuarioId, status) {
             ]
         })
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
     .then(data => {
         if (data.mensagem) {
             alert(data.mensagem);
