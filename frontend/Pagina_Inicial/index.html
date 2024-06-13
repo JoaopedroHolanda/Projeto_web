@@ -9,12 +9,24 @@
 <body>
     <div id="div-navbar">
         <div id="logo-container">
-           <a href="#index"><img id="logo" src="../img/Logo.jpeg"></a>
+            <a href="#index"><img id="logo" src="../img/Logo.jpeg"></a>
         </div>
         <ul class="navbar">
             <li><a href="#eventos">Eventos</a></li>
             <li><a href="../Certificados/certificados.html">Certificados</a></li>
-            <li><a href="../inscricoes/inscricoes.html">Inscrições</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Inscrições</a>
+                <div class="dropdown-content">
+                    <a id="meus-eventos" href="../inscricoes/inscricoes.html">Meus Eventos</a>
+                    <a id="minhas-inscricoes" href="../inscricoes/minhas_inscricoes.html">Minhas Inscrições</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Minha Conta</a>
+                <div class="dropdown-content">
+                    <a id="logout" href="../Autenticacao/Login/login.html">Logout</a>
+                </div>
+            </li>
         </ul>
     </div>
    
@@ -53,8 +65,6 @@
             </form>
         </div>
     </div>
-
-    <div id="success-message" style="display: none;">Evento deletado com sucesso</div>
 
     <div id="rodape">
         <div id="principal">

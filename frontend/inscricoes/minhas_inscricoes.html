@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="inscricoes.css">
+    <title>Minhas Inscrições - Gestão de Eventos</title>
+</head>
+<body>
+    <div id="div-navbar">
+        <div id="logo-container">
+            <a href="../Pagina_Inicial/index.html"><img id="logo" src="../img/Logo.jpeg"></a>
+        </div>
+        <ul class="navbar">
+            <li><a href="../Pagina_Inicial/index.html">Eventos</a></li>
+            <li><a href="../Certificados/certificados.html">Certificados</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Inscrições</a>
+                <div class="dropdown-content">
+                    <a id="meus-eventos" href="../inscricoes/inscricoes.html">Meus Eventos</a>
+                    <a id="minhas-inscricoes" href="../inscricoes/minhas_inscricoes.html">Minhas Inscrições</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Minha Conta</a>
+                <div class="dropdown-content">
+                    <a id="logout" href="../Autenticacao/Login/login.html">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div id="header">
+        <h1>Minhas Inscrições</h1>
+        <p>Veja e gerencie suas inscrições nos eventos!</p>
+    </div>
+    
+    <div id="inscricoes-container"></div>
+
+    <div id="rodape">
+        <div id="principal">
+            <p><a href="https://www.unifor.br/fale-conosco">Fale conosco</a> | <a href="https://www.unifor.br/trabalhe-conosco">Trabalhe conosco</a> | <a href="https://www.unifor.br/sempre-unifor/apresentacao">Sempre unifor</a> | <a href="https://www.unifor.br/certificados">Certificados de Eventos</a></p>
+            <p>Fundação Edson Queiroz - Universidade de Fortaleza</p>
+            <p>Central de Atendimento: (85) 3477.3000 | Endereço: Av. Washington Soares, 1321 - Edson Queiroz - CEP 60811-905 - Fortaleza-CE Brasil</p>
+        </div>
+
+        <div id="logo-unifor-rodape">
+            <img src="../img/unifor.png">
+        </div>
+    </div>
+
+    <script src="minhas_inscricoes.js"></script>
+</body>
+</html>

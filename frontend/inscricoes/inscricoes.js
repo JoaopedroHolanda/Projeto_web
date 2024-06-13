@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const userId = parseInt(localStorage.getItem('userId'));
 
     if (!token) {
-        window.location.href = '/login.html';
+        window.location.href = '../Autenticacao/Login/login.html';
         return;
     }
 
@@ -37,12 +37,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const participanteDiv = document.createElement('div');
             participanteDiv.className = 'participante';
             participanteDiv.innerHTML = `
-                <p>Nome: ${inscricao.nome}</p>
+                <p>Nome: ${inscricao.nome}
+                </p>
                 <p>Email: ${inscricao.email}</p>
                 <p>Status: <span id="status-${inscricao.evento_id}-${inscricao.usuario_id}">${inscricao.status}</span></p>
                 <button onclick="confirmarPresenca(${inscricao.evento_id}, ${inscricao.usuario_id})">Confirmar Presença</button>
                 <button onclick="marcarFalta(${inscricao.evento_id}, ${inscricao.usuario_id})">Marcar Falta</button>
-            `;
+`;
             participantesDiv.appendChild(participanteDiv);
         });
     })
@@ -94,3 +95,10 @@ function atualizarStatus(eventoId, usuarioId, status) {
         console.error('Error updating status:', error);
     });
 }
+
+document.getElementById('logout').addEventListener('click', function() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('userId');
+    window.location.href = '../Autenticacao/Login/login.html';
+});
+

@@ -1,13 +1,30 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+html, body {
     margin: 0;
+    padding: 0;
+    height: 100%;
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
     color: #333;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 #div-navbar {
     background-color: #044CF4;
-    padding: 10px 0;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo-container {
+    display: flex;
+    align-items: center;
 }
 
 #logo {
@@ -21,20 +38,55 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .navbar li {
     margin: 0 15px;
+    position: relative;
 }
 
 .navbar a {
     color: white;
     text-decoration: none;
+    padding: 14px 20px;
     display: block;
 }
 
 .navbar a:hover {
     background-color: #003BB5;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 #header {
@@ -43,6 +95,7 @@ body {
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    width: 100%;
 }
 
 #header h1 {
@@ -54,56 +107,131 @@ body {
     color: #666;
 }
 
-#inscricoes {
+#inscricoes-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 20px;
 }
 
-
-
-#rodape {
-    background-color: #044CF4;
-    height: 150px;
-    text-align: center;
-    padding-top: 20px;
-    color: #FFF;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-#rodape #principal {
-    margin-left: 120px;
-}
-
-#rodape #principal a {
-    text-align: center;
-    align-items: center;
-    color: white;
-    text-decoration: none;
-}
-
-#logo-unifor-rodape img {
-    text-align: end;
-    width: 200px;
-    margin-left: 50px;
-}
-
-
 .inscricao-card {
+    background-color: white;
     border: 1px solid #ccc;
-    padding: 16px;
-    margin: 16px;
-    border-radius: 8px;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: left;
 }
 
 .inscricao-card h3 {
     margin-top: 0;
 }
 
-.inscricao-card select, .inscricao-card button {
-    display: block;
-    margin: 8px 0;
+.participantes {
+    margin-top: 20px;
+}
+
+.participante {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.participante p {
+    margin: 5px 0;
+}
+
+.participante button {
+    margin-right: 10px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.participante button:hover {
+    opacity: 0.9;
+}
+
+.participante button.confirmar-presenca {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.participante button.marcar-falta {
+    background-color: #f44336;
+    color: white;
+}
+
+#rodape {
+    background-color: #044CF4;
+    text-align: center;
+    color: #FFF;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 50px;
+    margin-top: 20px;
+    width: 93%;
+    position: relative;
+    bottom: 0;
+}
+
+#rodape #principal {
+    flex: 1;
+}
+
+#rodape #principal a {
+    color: white;
+    text-decoration: none;
+}
+
+#logo-unifor-rodape {
+    flex: 0 0 auto;
+}
+
+#logo-unifor-rodape img {
+    width: 200px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar li {
+        width: 100%;
+        text-align: center;
+    }
+
+    #modal-content {
+        width: 90%;
+        height: auto;
+    }
+
+    #inscricoes-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #rodape {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #rodape #principal {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    #logo-unifor-rodape {
+        margin-left: 0;
+        text-align: center;
+    }
 }
